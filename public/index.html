@@ -16,7 +16,7 @@
 <body>
 <div class="container">
 	<div class="container-fluid">
-		<div class="row well cont-wrap">
+		<div class="row well cont-wrap fadeInDown animated">
 	    	<div class="col-md-12" ng-controller="AppCtrl">
 	            <h1>Contact List<div class="form-group col-lg-4 pull-right">
                                 <div class="form-control-wrapper">
@@ -47,7 +47,7 @@
            </td>
      </tr>
 
-				        <tr ng-repeat="contact in contactlist | filter:query">
+				        <tr ng-animate="'animate'"  ng-repeat="contact in contactlist | filter:query">
 				            <td>{{contact.name}}</td>
 				            <td>{{contact.email}}</td>
 				            <td>{{contact.number}}</td>
@@ -67,8 +67,8 @@
 <script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
 <script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
 <script src="controllers/main-controller.js"></script>
-  <script>
-             $(document).ready(function() {
+  <script type="text/javascript">
+               $(document).ready(function() {
              // This command is used to initialize some elements and make them work properly
              $.material.init();
              });
