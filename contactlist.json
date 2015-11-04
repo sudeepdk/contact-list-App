@@ -1,0 +1,3 @@
+{"_id":{ "$oid": "56337b229b1641282703e2da" },"name":"sudeep","email":"sudeep.m@aeonit.in","number":"9930025885","cname":"aeonit solutions"}
+{"_id":{ "$oid": "56337bd69e4ed4dc27b1fb0d" },"name":"mayank","email":"mayank.h@aeonit.in","number":"123456789","cname":"aeonit"}
+{"_id":{ "$oid": "563458b3a99f0bf81094e1bc" },"name":"ganesh","email":"ganesh.m@aeonit.in","number":"123","cname":"12"}

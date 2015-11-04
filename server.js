@@ -19,8 +19,6 @@ var bodyParser = require('body-parser');
 // })
 // working code
 
-
-
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
@@ -86,5 +84,5 @@ app.put('/contactlist/:id', function (req, res) {
 //   console.log('I received a GET request');
 // });
 
-app.listen(5001);
-console.log("server.listen(5001, [dk], [backlog], [callback])");
+app.listen(5002);
+console.log("server.listen(5002)");
