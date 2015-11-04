@@ -19,6 +19,7 @@ var bodyParser = require('body-parser');
 // })
 // working code
 
+
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.json());
 
@@ -78,7 +79,7 @@ app.put('/contactlist/:id', function (req, res) {
 
 
 
-// oldone 
+// oldone
 // app.get('/', function (req, res) {
 // 	res.send("hello from server.js");
 //   console.log('I received a GET request');
