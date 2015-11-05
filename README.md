@@ -1,8 +1,9 @@
 # contact-list-App
 
 To install node packages use 
+<pre><code>
 install npm 
-
+</code></pre>
 create mongodb document with ref of contactlist.json
 
 --------------------------------------------
