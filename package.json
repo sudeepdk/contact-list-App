@@ -4,16 +4,27 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "bcrypt-nodejs": "latest",
     "body-parser": "^1.10.2",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "ejs": "~0.8.5",
     "express": "^4.11.1",
+    "express-session": "~1.0.0",
+    "fs": "0.0.2",
+    "method-override": "~1.0.0",
     "mongojs": "^0.18.1",
+    "mongoose": "~3.8.1",
+    "morgan": "~1.0.0",
+    "node-uuid": "^1.4.3",
+    "nodemon": "^1.8.1",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",

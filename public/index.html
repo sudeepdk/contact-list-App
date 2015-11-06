@@ -1,78 +1,84 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
+
 <head>
-	<title>contact application - MEAN stack</title>
-	<link href="bower_components/bootstrap-material-design/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>contact application - MEAN stack</title>
+    <link href="bower_components/bootstrap-material-design/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="bower_components/bootstrap-material-design/dist/css/roboto.min.css" rel="stylesheet">
-        
-	<link href="bower_components/bootstrap-material-design/dist/css/material.min.css" rel="stylesheet">
-
+    <link href="bower_components/bootstrap-material-design/dist/css/material.min.css" rel="stylesheet">
     <link href="bower_components/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet">
-
-	<link href="bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet">
-
+    <link href="bower_components/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet">
     <link href="bower_components/bootstrap-material-design/dist/css/custome.css" rel="stylesheet">
 </head>
+
 <body>
-<div class="container">
-	<div class="container-fluid">
-		<div class="row well cont-wrap fadeInDown animated">
-	    	<div class="col-md-12" ng-controller="AppCtrl">
-	            <h1>Contact List<div class="form-group col-lg-4 pull-right">
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row well cont-wrap fadeInDown animated">
+                <div class="col-md-12" ng-controller="AppCtrl">
+                    <h1>Contact List<div class="form-group col-lg-4 pull-right">
                                 <div class="form-control-wrapper">
 	            <input type="text"  ng-model="query" class="form-control floating-label " id="inputEmail" placeholder="Search">
 	            </div>
 	            </div></h1>
-	            
-	            <table class="table ">
-				    <thead>
-				        <tr>
-				            <th>Name</th>
-				            <th>Location</th>
-				            <th>Contact No</th>
-				            <th>Company Name</th>
-				            <th>Action</th>
-				        </tr>
-				    </thead>
-				    <tbody>
-				      <tr>
-          <td><input class="form-control floating-label"  placeholder="Enter name" ng-model="contact.name" required></td>
-          <td><input type="email" class="form-control floating-label" placeholder="Enter email" ng-model="contact.email" required></td>
-          <td><input class="form-control floating-label" ng-model="contact.number" placeholder="Enter number" required></td>
-          <td><input class="form-control floating-label" placeholder="Enter company name" ng-model="contact.cname"></td>
-          <td><button class="btn btn-fab btn-raised btn-fab-mini  btn-primary" ng-click="addContact()" title="Add contact"><i class="mdi-social-person-add"></i></button>
-          
-           <button class="btn btn-fab btn-raised btn-fab-mini  btn-info" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom" ng-click="update()"><i class="mdi-content-save"></i></button>
-           <button class="btn btn-fab btn-raised btn-fab-mini  btn-info" ng-click="deselect()"><i class="mdi-notification-sync"></i></button>
-           </td>
-     </tr>
-
-				        <tr ng-animate="'animate'"  ng-repeat="contact in contactlist | filter:query">
-				            <td>{{contact.name}}</td>
-				            <td>{{contact.email}}</td>
-				            <td>{{contact.number}}</td>
-				            <td>{{contact.cname}}</td>
-				             <td><button class="btn btn-fab btn-raised btn-fab-mini  btn-danger" ng-click="remove(contact._id)"><i class="mdi-content-clear"></i></button>   <button class="btn btn-fab btn-raised btn-fab-mini  btn-primary" ng-click="edit(contact._id)"><i class="mdi-image-edit"></i></button></td>
-         
-				        </tr>
-				        </tbody>
-				</table>
-	        </div>
-		</div>
-	</div>
-</div>
-<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
-<script src="bower_components/bootstrap-material-design/dist/js/bootstrap.min.js"></script>
-<script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
-<script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
-<script src="controllers/main-controller.js"></script>
-  <script type="text/javascript">
-               $(document).ready(function() {
-             // This command is used to initialize some elements and make them work properly
-             $.material.init();
-             });
-	</script>
-
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Location</th>
+                                <th>Contact No</th>
+                                <th>Company Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input class="form-control floating-label" placeholder="Enter name" ng-model="contact.name">
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control floating-label" placeholder="Enter email" ng-model="contact.email">
+                                </td>
+                                <td>
+                                    <input class="form-control floating-label" ng-model="contact.number" placeholder="Enter number">
+                                </td>
+                                <td>
+                                    <input class="form-control floating-label" placeholder="Enter company name" ng-model="contact.cname">
+                                </td>
+                                <td>
+                                    <button class="btn btn-fab btn-raised btn-fab-mini  btn-primary" ng-click="addContact()" title="Add contact"><i class="mdi-social-person-add"></i></button>
+                                    <button class="btn btn-fab btn-raised btn-fab-mini  btn-info" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom" ng-click="update()"><i class="mdi-content-save"></i></button>
+                                    <button class="btn btn-fab btn-raised btn-fab-mini  btn-info" ng-click="deselect()"><i class="mdi-notification-sync"></i></button>
+                                </td>
+                            </tr>
+                            <tr ng-animate="'animate'" ng-repeat="contact in contactlist | filter:query">
+                                <td>{{contact.name}}</td>
+                                <td>{{contact.email}}</td>
+                                <td>{{contact.number}}</td>
+                                <td>{{contact.cname}}</td>
+                                <td>
+                                    <button class="btn btn-fab btn-raised btn-fab-mini  btn-danger" ng-click="remove(contact._id)"><i class="mdi-content-clear"></i></button>
+                                    <button class="btn btn-fab btn-raised btn-fab-mini  btn-primary" ng-click="edit(contact._id)"><i class="mdi-image-edit"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.12/angular.min.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/ripples.min.js"></script>
+    <script src="bower_components/bootstrap-material-design/dist/js/material.min.js"></script>
+    <script src="controllers/main-controller.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        // This command is used to initialize some elements and make them work properly
+        $.material.init();
+    });
+    </script>
 </body>
+
 </html>
