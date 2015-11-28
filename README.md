@@ -27,7 +27,7 @@ go to mongo-express folder using Command line / gitbash/ cmd
 
 To configure:
 
-Copy config.default.js into a new file called config.js.
+rename config.default.js into a new file called config.js.
 
 Fill in your MongoDB connection details, and any other options you want to change.
 
